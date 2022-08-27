@@ -20,48 +20,92 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 #pragma endregion
 
 #pragma region Model Data
+//float vertices[] = {
+//-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+// 0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
+// 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+// 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+//-0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+//-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+//
+//-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+// 0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+// 0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+// 0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+//-0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
+//-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+//
+//-0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+//-0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+//-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+//-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+//-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+//-0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+//
+// 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+// 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+// 0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+// 0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+// 0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+// 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+//
+//-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+// 0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
+// 0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+// 0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+//-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+//-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+//
+//-0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+// 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+// 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+// 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+//-0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
+//-0.5f,  0.5f, -0.5f,  0.0f, 1.0f
+//};
+
 float vertices[] = {
--0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
- 0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
- 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
- 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
--0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
--0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-
--0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
- 0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
- 0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
- 0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
--0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
--0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-
--0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
--0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
--0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
--0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
--0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
--0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-
- 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
- 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
- 0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
- 0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
- 0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
- 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-
--0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
- 0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
- 0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
- 0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
--0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
--0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-
--0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
- 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
- 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
- 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
--0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
--0.5f,  0.5f, -0.5f,  0.0f, 1.0f
+	-0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,                     
+	 0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,                     
+	 0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,                     
+	 0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,                     
+	-0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,                     
+	-0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,                     
+											                      
+	-0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,                      
+	 0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,                      
+	 0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,                      
+	 0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,                      
+	-0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,                      
+	-0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,                      
+											                      
+	-0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,                     
+	-0.5f,  0.5f, -0.5f, -1.0f,  0.0f,  0.0f,                     
+	-0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,                     
+	-0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,                     
+	-0.5f, -0.5f,  0.5f, -1.0f,  0.0f,  0.0f,                     
+	-0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,                     
+											                      
+	 0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,                     
+	 0.5f,  0.5f, -0.5f,  1.0f,  0.0f,  0.0f,                     
+	 0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,                     
+	 0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,                     
+	 0.5f, -0.5f,  0.5f,  1.0f,  0.0f,  0.0f,                     
+	 0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,                     
+											                      
+	-0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,                     
+	 0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,                     
+	 0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,                     
+	 0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,                     
+	-0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,                     
+	-0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,                     
+											                      
+	-0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,                     
+	 0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,                     
+	 0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,                     
+	 0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,                     
+	-0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,                     
+	-0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f                      
 };
 
 // 十个箱子的位置
@@ -175,12 +219,14 @@ int main()
 	// 第一个参数为VAO槽的位置即上文GLSL中layout的值，第二个参数为一个顶点由几个数构成这里为vec3所以是3个
 	// 第三个参数为数据类型这里为float，第四个参数为是否标准化我们已经标准化所以false
 	// 第五个参数为步长即下一个顶点数据距离开头现在的数据开头有多远，第六个参数为偏移量顶点数据从头开始，没有偏移量，但颜色数据在顶点数据之后所以有3个float偏移
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
 	// 纹理信息
-	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
-	glEnableVertexAttribArray(2);
+	// glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+	// glEnableVertexAttribArray(2);
+	glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+	glEnableVertexAttribArray(3);
 #pragma endregion
 
 	#pragma region Init and Load Textures
@@ -206,16 +252,16 @@ int main()
 
 	while (!glfwWindowShouldClose(window))
 	{
-		glClearColor(0.0f, 0.5f, 0.5f, 1.0f);
+		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		// 清理颜色缓冲区，并给屏幕glClearColor中的颜色.
 		// 清理深度缓冲区
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
 		for (int i = 0; i < 10; i++)
 		{
 			// 设置model变换矩阵
 			model = glm::mat4(1.0f);
 			model = glm::translate(model, cubePositions[i]);
+			model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));
 
 			// 设置材质
 			// 1.开启ShaderProgram，其实目前在外面开一边就行了，省略这一行效果是一样的
@@ -231,7 +277,11 @@ int main()
 			glUniformMatrix4fv(glGetUniformLocation(myShader.ID, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 			glUniform1i(glGetUniformLocation(myShader.ID, "box"), 0);
 			glUniform1i(glGetUniformLocation(myShader.ID, "wife"), 1);
-
+			glUniform3f(glGetUniformLocation(myShader.ID, "objectColor"), 1.0f, 0.5f, 0.31f);
+			glUniform3f(glGetUniformLocation(myShader.ID, "ambientColor"), 1.0f, 1.0f, 1.0f);
+			glUniform3f(glGetUniformLocation(myShader.ID, "lightPos"), sin((float)glfwGetTime()) * 10.0f, sin((float)glfwGetTime()) * 10.0f, sin((float)glfwGetTime()) * 10.0f);
+			glUniform3f(glGetUniformLocation(myShader.ID, "lightColor"), 1.0f, 1.0f, 1.0f);
+			glUniform3f(glGetUniformLocation(myShader.ID, "cameraPos"), camera->Position.x, camera->Position.y, camera->Position.z);
 			// 设置模型
 			glBindVertexArray(VAO);
 
@@ -269,7 +319,7 @@ void processInput(GLFWwindow* window, Camera* camera) {
 	deltaTime = currentTime - lastTime;
 	lastTime = currentTime;
 
-	float cameraSpeed = deltaTime * 2.5f;
+	float cameraSpeed = deltaTime * 2.7f;
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
 		camera->Position += cameraSpeed * camera->Forward;
 	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
@@ -300,7 +350,7 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 
 	// std::cout << deltaX << std::endl;
 
-	float sensitivity = deltaTime * 0.2f; // 鼠标灵敏度
+	float sensitivity = deltaTime * 0.25f; // 鼠标灵敏度
 	deltaX *= sensitivity;
 	deltaY *= sensitivity;
 
