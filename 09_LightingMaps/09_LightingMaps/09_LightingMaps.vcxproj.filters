@@ -14,7 +14,7 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Shader">
-      <UniqueIdentifier>{eef9a6fa-4bc7-4704-bb65-2e9055aa483b}</UniqueIdentifier>
+      <UniqueIdentifier>{5328c588-7a1e-4326-bbd6-ebb7161d6725}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -29,6 +29,9 @@
     <ClInclude Include="Camera.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
     <ClInclude Include="Shader.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -37,10 +40,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="07_Phong.cpp">
+    <ClCompile Include="09_LightingMaps.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Shader.cpp">
@@ -51,7 +57,7 @@
     <Image Include="box.jpg">
       <Filter>资源文件</Filter>
     </Image>
-    <Image Include="pic.jpg">
+    <Image Include="wife.jpg">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>

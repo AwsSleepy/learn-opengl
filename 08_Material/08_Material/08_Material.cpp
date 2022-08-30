@@ -8,6 +8,7 @@
 #include <iostream>
 #include "Camera.h"
 #include "Shader.h"
+#include "Material.h"
 #include "stb_image.h"
 
 #pragma region Input Declare
@@ -20,49 +21,6 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 #pragma endregion
 
 #pragma region Model Data
-//float vertices[] = {
-//-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-// 0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
-// 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-// 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-//-0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-//-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-//
-//-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-// 0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-// 0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-// 0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-//-0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
-//-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-//
-//-0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-//-0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-//-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-//-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-//-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-//-0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-//
-// 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-// 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-// 0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-// 0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-// 0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-// 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-//
-//-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-// 0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
-// 0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-// 0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-//-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-//-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-//
-//-0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-// 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-// 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-// 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-//-0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
-//-0.5f,  0.5f, -0.5f,  0.0f, 1.0f
-//};
 
 float vertices[] = {
 	-0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f, 0.0f, 0.0f,
@@ -119,7 +77,7 @@ glm::vec3 cubePositions[] = {
 	glm::vec3(1.3f, -2.0f, -2.5f),
 	glm::vec3(1.5f,  2.0f, -2.5f),
 	glm::vec3(1.5f,  0.2f, -1.5f),
-	glm::vec3(-1.3f,  1.0f, -1.5f)
+	glm::vec3(-1.3f,  1.0f, -1.5f),
 };
 #pragma endregion
 
@@ -200,6 +158,10 @@ int main()
 	myShader.use();
 #pragma endregion
 
+	#pragma region Init Material
+	Material* myMaterial = new Material(&myShader, glm::vec3(0.3f, 0.3f, 0.3f), glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(0.3f, 0.3f, 0.3f), 64);
+#pragma endregion
+
 	#pragma region Init and Load Models to VAO, VBO
 	// 定义VAO,VAO里定义了顶点间的关系，以及这些面的法向量，材质uv
 	unsigned int VAO;
@@ -258,6 +220,7 @@ int main()
 		// 清理颜色缓冲区，并给屏幕glClearColor中的颜色.
 		// 清理深度缓冲区
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 		for (int i = 0; i < 10; i++)
 		{
 			// 设置model变换矩阵
@@ -280,10 +243,14 @@ int main()
 			glUniform1i(glGetUniformLocation(myShader.ID, "box"), 0);
 			glUniform1i(glGetUniformLocation(myShader.ID, "wife"), 1);
 			glUniform3f(glGetUniformLocation(myShader.ID, "objectColor"), 1.0f, 1.0f, 1.0f);
-			glUniform3f(glGetUniformLocation(myShader.ID, "ambientColor"), 1.0f, 1.0f, 1.0f);
+			glUniform3f(glGetUniformLocation(myShader.ID, "cameraPos"), camera->Position.x, camera->Position.y, camera->Position.z);
 			glUniform3f(glGetUniformLocation(myShader.ID, "lightPos"), 10.0f, 10.0f, 10.0f); //sin((float)glfwGetTime()) * 
 			glUniform3f(glGetUniformLocation(myShader.ID, "lightColor"), 1.0f, 1.0f, 1.0f);
-			glUniform3f(glGetUniformLocation(myShader.ID, "cameraPos"), camera->Position.x, camera->Position.y, camera->Position.z);
+			myShader.setUniform3f("material.ambient", myMaterial->ambient);
+			myShader.setUniform3f("material.diffuse", myMaterial->diffuse);
+			myShader.setUniform3f("material.specular", myMaterial->specular);
+			myShader.setUniform1i("material.shininess", myMaterial->shininess);
+			
 			// 设置模型
 			glBindVertexArray(VAO);
 

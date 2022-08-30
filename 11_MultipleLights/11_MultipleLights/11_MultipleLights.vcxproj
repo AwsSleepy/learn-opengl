@@ -18,11 +18,33 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="fragmentSource.glsl" />
+    <None Include="vertexSource.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="LightDirectional.h" />
+    <ClInclude Include="LightPoint.h" />
+    <ClInclude Include="LightSpot.h" />
+    <ClInclude Include="Material.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="stb_image.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="11_MultipleLights.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="LightDirectional.cpp" />
+    <ClCompile Include="LightPoint.cpp" />
+    <ClCompile Include="LightSpot.cpp" />
+    <ClCompile Include="Material.cpp" />
+    <ClCompile Include="Shader.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{baf79f8d-ec94-4283-ac85-b8dbf84c1e5f}</ProjectGuid>
-    <RootNamespace>My07Phong</RootNamespace>
+    <ProjectGuid>{54b812b8-3766-4c62-a087-d9168f25fe5f}</ProjectGuid>
+    <RootNamespace>My11MultipleLights</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -126,24 +148,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <None Include="fragmentSource.glsl" />
-    <None Include="vertexSource.glsl" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="Shader.h" />
-    <ClInclude Include="stb_image.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="07_Phong.cpp" />
-    <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="Shader.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="box.jpg" />
-    <Image Include="pic.jpg" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{baf79f8d-ec94-4283-ac85-b8dbf84c1e5f}</ProjectGuid>
-    <RootNamespace>My07Phong</RootNamespace>
+    <ProjectGuid>{03f08111-07c6-4744-ae69-7db8977fc93f}</ProjectGuid>
+    <RootNamespace>My10LightSource</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -132,17 +132,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="LightDirectional.h" />
+    <ClInclude Include="LightPoint.h" />
+    <ClInclude Include="LightSpot.h" />
+    <ClInclude Include="Material.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="07_Phong.cpp" />
+    <ClCompile Include="10_LightSource.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="LightDirectional.cpp" />
+    <ClCompile Include="LightPoint.cpp" />
+    <ClCompile Include="LightSpot.cpp" />
+    <ClCompile Include="Material.cpp" />
     <ClCompile Include="Shader.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="box.jpg" />
-    <Image Include="pic.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
