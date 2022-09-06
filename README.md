@@ -1,5 +1,5 @@
 # learn-opengl
-### 1. 简介：通过learn-opengl网站学习OpenGL，并试图创造一个简单的游戏引擎
+### 1. 简介：通过learn-opengl网站学习OpenGL
 
 ### 2. 项目环境：
 
